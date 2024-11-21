@@ -1,5 +1,59 @@
 {
   "Routes": [
+  //users service
+
+  {
+      "DownstreamPathTemplate": "/api/Users/GetUser/{id}",
+      "UpstreamPathTemplate": "/gateway/users/getuser/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5202
+        }
+      ]
+    },
+  {
+      "DownstreamPathTemplate": "/api/Users/GetAlluser",
+      "UpstreamPathTemplate": "/gateway/users/GetAlluser",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5202
+        }
+      ]
+    },
+	//book service
+	 {
+      "DownstreamPathTemplate": "/api/BookExchange/GetExchangeBookdetails",
+      "UpstreamPathTemplate": "/gateway/bookexchange/getexchangebookdetails",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5220
+        }
+      ]
+    },
+	 {
+      "DownstreamPathTemplate": "/api/BookExchange/GetRequesterExchangedBooks",
+      "UpstreamPathTemplate": "/gateway/bookexchange/getrequesterexchangedbooks",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5220
+        }
+      ]
+    },
+	
+	
+	//Book Tranksaction service
     {
       "DownstreamPathTemplate": "/api/BookTransaction/GetAllBookTransaction",
       "UpstreamPathTemplate": "/gateway/getallbooktransaction",
@@ -8,7 +62,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5202
+          "Port": 5210
         }
       ]
     },
@@ -20,7 +74,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5202
+          "Port": 5210
         }
       ]
     }
